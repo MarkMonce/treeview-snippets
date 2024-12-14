@@ -1,7 +1,6 @@
+import { filterTable, resetTable } from './tableFilter.js';
+
 // Load JSON dynamically
-
-// import { filterTable, resetTable } from './tableFilter.js';
-
 fetch('treeview.json')
     .then(response => {
         console.log("Fetching JSON file...");
@@ -91,9 +90,33 @@ function initializeTreeView() {
         });
     });
 
+    // Handle checkbox selection
+    const checkboxes = document.querySelectorAll('.searchtree input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', event => {
+            const isChecked = checkbox.checked;
+
+            // Update all descendants
+            const updateDescendants = (parentCheckbox) => {
+                const parentLi = parentCheckbox.closest('li');
+                if (parentLi) {
+                    const nested = parentLi.querySelector('.nested');
+                    if (nested) {
+                        nested.querySelectorAll('input[type="checkbox"]').forEach(childCheckbox => {
+                            childCheckbox.checked = isChecked;
+                        });
+                    }
+                }
+            };
+
+            updateDescendants(checkbox);
+        });
+    });
+
     console.log("Tree view functionality initialized.");
 }
 
+// Collect checked values on button click
 
 
 
@@ -107,35 +130,35 @@ function initializeTreeView() {
 //         return;
 //     }
 
-//     const selectedCriteria = checkedItems.map(checkbox => checkbox.value);
+//     const selectedCriteria = checkedItems.map(checkbox => {
+//         const label = checkbox.parentElement.textContent.trim(); // Get the label text
+//         return label;
+//     });
 
-//     // Filter the table based on selected criteria
-//     filterTable(selectedCriteria);
+//     alert(`Selected Criteria:\n- ${selectedCriteria.join('\n- ')}`);
 // });
-
-let globalCriteria = []; // Declare a global variable
-
 document.getElementById('searchButton').addEventListener('click', () => {
     const checkedItems = Array.from(
         document.querySelectorAll('.searchtree input[type="checkbox"]:checked')
     );
 
+    // Collect selected treeview criteria
     const selectedCriteria = checkedItems.map(checkbox => checkbox.parentElement.textContent.trim());
+
+    // Collect and parse additional criteria from the input field
     const additionalCriteriaInput = document.getElementById('additionalCriteria').value;
     const additionalCriteria = additionalCriteriaInput
         ? additionalCriteriaInput.split(',').map(item => item.trim()).filter(item => item)
         : [];
 
-    globalCriteria = [...selectedCriteria, ...additionalCriteria]; // Assign to global variable
+    // Combine all criteria
+    const allCriteria = [...selectedCriteria, ...additionalCriteria];
 
-    if (globalCriteria.length === 0) {
+    if (allCriteria.length === 0) {
         alert("No criteria selected.");
         return;
     }
 
-    alert(`Selected Criteria:\n- ${globalCriteria.join('\n- ')}`);
+    alert(`Selected Criteria:\n- ${allCriteria.join('\n- ')}`);
 });
-
-
-document.getElementById('resetButton').addEventListener('click', resetTable);
 

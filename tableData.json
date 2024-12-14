@@ -1,0 +1,17 @@
+[
+    { "UnitType": "Battleships", "SubType": "BB", "Class": "IOWA", "Ship": "USS IOWA (BB-61)" },
+    { "UnitType": "Battleships", "SubType": "BB", "Class": "SOUTH DAKOTA", "Ship": "USS SOUTH DAKOTA (BB-57)" },
+    { "UnitType": "Battleships", "SubType": "BB", "Class": "NORTH CAROLINA", "Ship": "USS NORTH CAROLINA (BB-55)" },
+    { "UnitType": "Battleships", "SubType": "BB", "Class": "WEST VIRGINIA", "Ship": "USS WEST VIRGINIA (BB-48)" },
+    { "UnitType": "Battleships", "SubType": "BB", "Class": "COLORADO", "Ship": "USS COLORADO (BB-45)" },
+    { "UnitType": "Battleships", "SubType": "BB", "Class": "TENNESSEE", "Ship": "USS TENNESSEE (BB-43)" },
+    { "UnitType": "Battleships", "SubType": "BB", "Class": "NEW MEXICO", "Ship": "USS NEW MEXICO (BB-40)" },
+    { "UnitType": "Aircraft Carriers", "SubType": "CV", "Class": "YORKTOWN", "Ship": "USS YORKTOWN (CV-5" },
+    { "UnitType": "Aircraft Carriers", "SubType": "CV", "Class": "YORKTOWN", "Ship": "USS ENTERPRISE (CV-6)"},
+    { "UnitType": "Aircraft Carriers", "SubType": "CV", "Class": "YORKTOWN", "Ship": "USS HORNET (CV-8)"},
+    { "UnitType": "Aircraft Carriers", "SubType": "CV", "Class": "ESSEX", "Ship": "USS ESSEX (CV-9"},
+    { "UnitType": "Aircraft Carriers", "SubType": "CV", "Class": "ESSEX", "Ship": "USS YORKTOWN (CV-10)"},
+    { "UnitType": "Aircraft Carriers", "SubType": "CV", "Class": "ESSEX", "Ship": "USS INTREPID (CV-11)"},
+    { "UnitType": "Aircraft Carriers", "SubType": "CV", "Class": "ESSEX", "Ship": "USS HORNET (CV-12)"},
+    { "UnitType": "Cruisers", "SubType": "CA", "Class": "BALTIMORE", "Ship:": "USS BALTIMORE (CA-66)" }
+]

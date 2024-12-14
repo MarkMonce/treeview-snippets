@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="treeview.css">
+	<title></title>
+</head>
+<body>
+	<h2>Search Tree Prototype</h2>
+	<div class="tree_and_table">
+        <div class="treeview-parent">
+            <ul class="searchtree">
+                
+            </ul>
+            <input type="text" id="additionalCriteria" placeholder="Enter additional criteria, comma-separated" style="margin-top: 1rem; width: 80%;">
+            <div style="display: flex; flex-direction: column; text-align: center; margin-top: 1rem; align-items: center;">
+                <button id="searchButton" style="width: 80px;">Search</button>
+            </div>
+
+
+        </div>
+        <div class="table-parent">
+
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Unit Type</th>
+                        <th>Sub-Type</th>
+                        <th>Class</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Battleships</td>
+                        <td>BB</td>
+                        <td>IOWA</td>
+                    </tr>
+                    <tr>
+                        <td>Battleships</td>
+                        <td>BB</td>
+                        <td>SOUTH DAKOTA</td>
+                    </tr>
+                    <tr>
+                        <td>Aircraft Carriers</td>
+                        <td>CV</td>
+                        <td>YORKTOWN</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+	<script src='dynamic_treeview.js'></script>
+    <script type="module" src="dynamic_treeview.js"></script>
+
+</body>
+</html>
